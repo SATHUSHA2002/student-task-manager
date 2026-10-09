@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyFlow | Student Task Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <a href="#" class="brand">
+                <span class="brand-icon">S</span>
+                <span>StudyFlow</span>
+            </a>
+
+            <p class="menu-label">WORKSPACE</p>
+
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-link active">
+                    <span>▦</span> Dashboard
+                </a>
+                <a href="#tasks-section" class="nav-link">
+                    <span>✓</span> My Tasks
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="sidebar-note">
+                    <span class="note-icon">✦</span>
+                    <h3>Keep going!</h3>
+                    <p>Small steps every day lead to big results.</p>
+                </div>
+                <p class="sidebar-footer">StudyFlow © 2026</p>
+            </div>
+        </aside>
+
+        <main class="main-content" id="dashboard">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+                    <h1>My Dashboard</h1>
+                    <p class="subtitle">
+                        Plan your work. Focus on your goals.
+                    </p>
+                </div>
+
+                <div class="profile">
+                    <div class="profile-avatar">S</div>
+                    <div>
+                        <strong>My Study Space</strong>
+                        <span>Student workspace</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="welcome-banner">
+                <div class="welcome-content">
+                    <span class="welcome-label">YOUR DAILY PLANNER</span>
+                    <h2>Make today count! ✨</h2>
+                    <p>
+                        Stay organized, complete your tasks, and make
+                        progress towards your goals.
+                    </p>
+                </div>
+                <div class="welcome-decoration" aria-hidden="true">
+                    ✦
+                </div>
+            </section>
+
+            <section class="stats-grid" aria-label="Task statistics">
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-icon total-icon">▤</span>
+                        <span class="stat-label">All Tasks</span>
+                    </div>
+                    <p class="stat-number" id="total-count">0</p>
+                    <p class="stat-description">Tasks in your list</p>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-icon pending-icon">◷</span>
+                        <span class="stat-label">Pending</span>
+                    </div>
+                    <p class="stat-number" id="pending-count">0</p>
+                    <p class="stat-description">Tasks to complete</p>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span class="stat-icon completed-icon">✓</span>
+                        <span class="stat-label">Completed</span>
+                    </div>
+                    <p class="stat-number" id="completed-count">0</p>
+                    <p class="stat-description">Tasks you've finished</p>
+                </article>
+            </section>
+
+            <section class="tasks-card" id="tasks-section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">STAY PRODUCTIVE</p>
+                        <h2>My Tasks</h2>
+                        <p class="section-description">
+                            Add your tasks and track your progress.
+                        </p>
+                    </div>
+                    <span class="task-count-badge" id="task-count-badge">
+                        0 tasks
+                    </span>
+                </div>
+
+                <form id="task-form" class="task-form">
+                    <label for="task-input" class="sr-only">
+                        Task name
+                    </label>
+                    <input
+                        id="task-input"
+                        type="text"
+                        placeholder="What do you need to do?"
+                        maxlength="150"
+                        required
+                    >
+                    <button type="submit" class="add-button">
+                        <span>+</span> Add Task
+                    </button>
+                </form>
+
+                <div class="filter-row">
+                    <div class="filter-buttons" aria-label="Filter tasks">
+                        <button
+                            type="button"
+                            class="filter-button active"
+                            data-filter="all"
+                            aria-pressed="true"
+                        >All</button>
+
+                        <button
+                            type="button"
+                            class="filter-button"
+                            data-filter="pending"
+                            aria-pressed="false"
+                        >Pending</button>
+
+                        <button
+                            type="button"
+                            class="filter-button"
+                            data-filter="completed"
+                            aria-pressed="false"
+                        >Completed</button>
+                    </div>
+
+                    <span class="saved-label">
+                        <span class="saved-dot"></span> Saved locally
+                    </span>
+                </div>
+
+                <ul id="task-list" class="task-list"></ul>
+            </section>
+
+            <footer class="main-footer">
+                Made for better study habits <span>♥</span>
+            </footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
